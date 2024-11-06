@@ -3,9 +3,7 @@ provider "aws" {
 }
 
 
-module "ec2" {
-    source = "./modules/ec2"
-    ami = "ami-053b0d53c279acc90"
-    instance_type = "t2.micro"
-
+resource "aws_instance" "odility" {
+  ami = var.ami
+  instance_type = var.instance_type
 }
